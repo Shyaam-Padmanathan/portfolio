@@ -3,7 +3,9 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import BtnToggleTheme from "./BtnTottleTheme";
-import { Col, Dropdown, Row } from "react-bootstrap";
+import { Col, 
+  Dropdown,
+  Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -51,7 +53,7 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            {/* <Nav.Item>
+            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/about"
@@ -59,9 +61,9 @@ function NavBar() {
               >
                 <AiOutlineUser style={{ marginBottom: "3px" }} /> {t('About')}
               </Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item> 
 
-            {/* <Nav.Item>
+             <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/project"
@@ -72,7 +74,7 @@ function NavBar() {
                 />{" "}
                 {t('Projects')}
               </Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
 
@@ -83,7 +85,7 @@ function NavBar() {
           </Col>
           
           <Col className="col-sm-4">
-          {/* <Dropdown 
+          <Dropdown 
             onSelect={e => changeLanguage(e)}
           >
             <Dropdown.Toggle id="dropdown-basic">
@@ -94,7 +96,7 @@ function NavBar() {
               <Dropdown.Item eventKey="en">EN</Dropdown.Item>
               <Dropdown.Item eventKey="it">IT</Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>  */}
+          </Dropdown> 
           </Col>
 
         </Row>       
