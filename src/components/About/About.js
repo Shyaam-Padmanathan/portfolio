@@ -25,7 +25,7 @@ function About() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              {t('AboutHeader')} <strong className="green">Me</strong>
+              About <strong className="green">Me</strong>
             </h1>
             <Aboutcard />
           </Col>
@@ -38,15 +38,15 @@ function About() {
           </Col>
         </Row>
         <h1 className="project-heading">
-           <strong className="green">{t('Languages')} </strong>
-           {t('And')} <strong className="green">{t('Frameworks')} </strong> {t('IUse')}
+           <strong className="green">Languages </strong>
+           and <strong className="green">Frameworks </strong> I use
            
         </h1>
 
         <Techstack />
 
         <h1 className="project-heading">
-          <strong className="green">Tools</strong> {t('IUse')}
+          <strong className="green">Tools</strong> I use
         </h1>
         <Toolstack />
 

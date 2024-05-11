@@ -1,33 +1,25 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import {
-  SiLinux,
+  SiMacos,
   SiMicrosoftazure,
   SiAmazonaws,
-  SiVim,
   SiDocker,
   SiGit,
-  SiJupyter,
-  SiGooglecolab
+  SiWindows,
+  SiGithub,
+  SiVisualstudiocode
 } from "react-icons/si";
+import { Tools } from "../../helper/constant";
 
 
 function Toolstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       {
-        [
-          <SiLinux/>,
-          <SiGit/>,
-          <SiMicrosoftazure />,
-          <SiAmazonaws/>,
-          <SiVim/>,
-          <SiDocker/>,
-          <SiJupyter/>,
-          <SiGooglecolab/>
-        ].map(tool => 
+        Tools.map(tool => 
             <Col xs={4} md={2} className="tech-icons">
-              {tool}
+              {tool.ToolImage}
           </Col>)
       }
     </Row>

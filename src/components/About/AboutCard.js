@@ -1,22 +1,21 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { FaHandPointRight } from "react-icons/fa";
-import { useTranslation } from "react-i18next";
+import { CompanyDetail } from "../../helper/constant";
 function AboutCard() {
-  const  { t } = useTranslation();
 
   return (
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-          {t('Greeting')} {t('Im')} <span className="green">Shyaam</span>, {t('SWE')} {t('IWorkAt')} <span className="green">{t('Company')}</span> {t('CompanyLocation')}.
+          Hi There! I'm <span className="green">Shyaam</span>, a passionate Software Engineer working at <span className="green">{CompanyDetail.Company}</span> {CompanyDetail.CompanyLocation}.
             <br/>
-            {t('IHoldDegree1')} <span className="green">Computer Science Engineering</span> {t('School1')}.
+            I hold a Bachelor of Engineering in <span className="green">Computer Science Engineering</span> from Panimalar Institute Of Technology.
             
             <br/>
             <br/>
-            {t('Interests')}
+            My professional interests include:
           </p>
           <ul>
             <li className="about-activity">
