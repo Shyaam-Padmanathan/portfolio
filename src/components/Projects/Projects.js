@@ -15,7 +15,6 @@ function Projects() {
   
   return (
     <Container fluid className="project-section">
-      <Particle />
       <Container>
         <h1 className="project-heading">
           My Recent <strong className="green">Works </strong>
@@ -83,6 +82,7 @@ function Projects() {
           </Col>          */}
         </Row>
       </Container>
+      <Particle />
     </Container>
   );
 }

@@ -10,7 +10,6 @@ import Toolstack from "./Toolstack";
 function About() {
   return (
     <Container fluid className="about-section">
-      <Particle />
       <Container>
         <Row style={{ justifyContent: "center", padding: "10px" }}>
           <Col
@@ -49,6 +48,7 @@ function About() {
 
         <Github />
       </Container>
+      <Particle />
     </Container>
   );
 }
