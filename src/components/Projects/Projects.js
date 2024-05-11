@@ -3,28 +3,37 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 
-import bayesnet from "../../assets/Projects/bayesnet.jpg";
-import quantum from "../../assets/Projects/quantum.png";
-import diffusers from "../../assets/Projects/diffusers.jpg"
-import portfolio from "../../assets/Projects/portfolio.png";
-import pandasai from "../../assets/Projects/pandas-ai.png";
+// import bayesnet from "../../assets/Projects/bayesnet.jpg";
+// import quantum from "../../assets/Projects/quantum.png";
+// import diffusers from "../../assets/Projects/diffusers.jpg"
+// import portfolio from "../../assets/Projects/portfolio.png";
+// import pandasai from "../../assets/Projects/pandas-ai.png";
 
-import { useTranslation } from "react-i18next";
+import { ProjectDetails } from "../../helper/constant";
 
 function Projects() {
-  const { t } = useTranslation();
   
   return (
     <Container fluid className="project-section">
       <Particle />
       <Container>
         <h1 className="project-heading">
-          {t('ProjHeader')} <strong className="green">{t('Works')} </strong>
+          My Recent <strong className="green">Works </strong>
         </h1>
-        <p className="text">{t('ProjSubtitle')}</p>
+        <p className="text">Here are a few projects I've worked on recently</p>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-        <Col md={4} className="project-card">
+          {ProjectDetails.map(x=>
+            <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={x.ProjectImgPath}
+              title={x.ProjectTitle}
+              description={x.ProjectDescription}
+              link={x.ProjectDemoUrl}
+            />
+          </Col>
+          )}
+        {/* <Col md={4} className="project-card">
             <ProjectCard
               imgPath={diffusers}
               title="Diffusers-rs"
@@ -67,11 +76,11 @@ function Projects() {
             <ProjectCard
               imgPath={portfolio}
               isBlog={false}
-              title={t('ThisWebsite')}
+              title={'This website'}
               description={t('Proj4')}
               link=""
             />
-          </Col>         
+          </Col>          */}
         </Row>
       </Container>
     </Container>

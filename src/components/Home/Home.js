@@ -1,12 +1,30 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../assets/home.svg";
+import React, { useState } from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import HomeLogo from "../../assets/home_2.svg";
 import Particle from "../Particle";
 import Type from "./Type";
-import { useTranslation } from "react-i18next";
+import Resume from "../../assets/ShyaamResume.pdf";
+import { BiDownload, BiLoaderCircle } from "react-icons/bi";
+import axios from 'axios';
+import fileDownload from 'js-file-download';
 
-function Home() {
-  const { t } = useTranslation();
+const Home = () => {
+  const [enableLoader, setEnableLoader] = useState(false);
+
+  const handleDownload = async () => {
+    setEnableLoader(true);
+    await axios.get(Resume, {
+      responseType: 'blob',
+    })
+    .then((res) => {
+      fileDownload(res.data, 'Shyaam_Resume.pdf');
+      setEnableLoader(false);
+    })
+    .catch((error) => {
+      console.error("Error downloading the file: ", error);
+      setEnableLoader(false);
+    });
+  };
 
   return (
     <section>
@@ -16,7 +34,7 @@ function Home() {
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There! <span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
+                Hello There! <span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
               </h1>
 
               <h1 className="heading-name">
@@ -24,19 +42,25 @@ function Home() {
                 <strong className="main-name"> SHYAAM </strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
+              <div style={{ padding: 50, textAlign: "left", gap: 20 }}>
+                <div><Type /></div>  
+                <br />
+                <Button variant="primary" onClick={handleDownload}>
+                  {enableLoader ? <BiLoaderCircle /> : <BiDownload />}&nbsp;
+                  Resume
+                </Button>
               </div>
+              
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <img src={homeLogo} alt="home pic" className="img-fluid" />
+              <img src={HomeLogo} alt="home pic" className="img-fluid" />
             </Col>
           </Row>
         </Container>
       </Container>
     </section>
   );
-}
+};
 
 export default Home;

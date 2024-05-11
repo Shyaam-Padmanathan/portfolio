@@ -31,8 +31,8 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto" defaultActiveKey="#home">
           {MenuItems.map(menu=>
-            <Nav.Item>
-              <Nav.Link as={Link} to={menu.path} onClick={() => updateExpanded(false)}>
+            <Nav.Item key={menu.name}>
+              <Nav.Link  as={Link} to={menu.path} onClick={() => updateExpanded(false)}>
                 {menu.icon} {menu.name}
               </Nav.Link>
             </Nav.Item>

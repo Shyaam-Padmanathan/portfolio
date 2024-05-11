@@ -1,15 +1,5 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import {
-  SiMacos,
-  SiMicrosoftazure,
-  SiAmazonaws,
-  SiDocker,
-  SiGit,
-  SiWindows,
-  SiGithub,
-  SiVisualstudiocode
-} from "react-icons/si";
 import { Tools } from "../../helper/constant";
 
 

@@ -42,6 +42,7 @@ html {
 
 button:focus {
   box-shadow: none !important;
+  cursor: pointer;
 }
 
 /* --------- */
