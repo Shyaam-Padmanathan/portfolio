@@ -16,14 +16,14 @@ const Home = () => {
     await axios.get(Resume, {
       responseType: 'blob',
     })
-    .then((res) => {
-      fileDownload(res.data, 'Shyaam_Resume.pdf');
-      setEnableLoader(false);
-    })
-    .catch((error) => {
-      console.error("Error downloading the file: ", error);
-      setEnableLoader(false);
-    });
+      .then((res) => {
+        fileDownload(res.data, 'Shyaam_Resume.pdf');
+        setEnableLoader(false);
+      })
+      .catch((error) => {
+        console.error("Error downloading the file: ", error);
+        setEnableLoader(false);
+      });
   };
 
   return (
@@ -41,15 +41,16 @@ const Home = () => {
                 <strong className="main-name"> SHYAAM </strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left", gap: 20 }}>
-                <div><Type /></div>  
-                <br />
-                <Button variant="primary" onClick={handleDownload}>
+              <div style={{ padding: 50, textAlign: "left", display:'grid', rowGap:5 }}>
+                <div><Type /></div>
+                &nbsp;
+                <div><Button className="gradient-backgroud" onClick={handleDownload}>
                   {enableLoader ? <BiLoaderCircle /> : <BiDownload />}&nbsp;
-                  Resume
+                  Download CV
                 </Button>
+                </div>
               </div>
-              
+
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
@@ -59,7 +60,7 @@ const Home = () => {
         </Container>
         <Particle />
       </Container>
-      </section>
+    </section>
   );
 };
 
