@@ -31,10 +31,12 @@ import {
 export const MenuItems = [
     {
         name: 'Home',
+        section: 'home',
         icon: <AiOutlineHome style={{ marginBottom: "3px" }} />,
         path: '/'
     }, {
         name: 'About',
+        section: 'about',
         icon: <AiOutlineUser style={{ marginBottom: "3px" }} />,
         path: '/about'
     },

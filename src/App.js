@@ -7,10 +7,7 @@ import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 
 import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate
+  BrowserRouter as Router
 } from "react-router-dom";
 
 import "./style.css";
@@ -18,6 +15,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import ScrollToTop from "./components/ScrollToTop";
+import { BiChevronUpCircle } from "react-icons/bi";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -35,16 +33,12 @@ function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          {/* <Route path="/resume" element={<Resume />} /> */}
-          <Route path="*" element={<Navigate to="/"/>} />
-        </Routes>
+      <Navbar />
+      {/* <ScrollToTop /> */}
+       <Home />
+       <About/>
       </div>
+      <BiChevronUpCircle id='scrollTop' size={50} className='scroll-top-icon' onClick={()=>ScrollToTop()}/>
       <Footer />
     </Router>
   );

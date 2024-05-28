@@ -1,30 +1,17 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import HomeLogo from "../../assets/home_2.svg";
 import Particle from "../Particle";
 import Type from "./Type";
-import Resume from "../../assets/ShyaamResume.pdf";
-import { BiDownload, BiLoaderCircle } from "react-icons/bi";
-import axios from 'axios';
-import fileDownload from 'js-file-download';
+import {
+  AiFillGithub,
+  AiFillMail,
+} from "react-icons/ai";
+
+import { FaLinkedinIn } from "react-icons/fa";
+
 
 const Home = () => {
-  const [enableLoader, setEnableLoader] = useState(false);
-
-  const handleDownload = async () => {
-    setEnableLoader(true);
-    await axios.get(Resume, {
-      responseType: 'blob',
-    })
-      .then((res) => {
-        fileDownload(res.data, 'Shyaam_Resume.pdf');
-        setEnableLoader(false);
-      })
-      .catch((error) => {
-        console.error("Error downloading the file: ", error);
-        setEnableLoader(false);
-      });
-  };
 
   return (
     <section>
@@ -32,22 +19,50 @@ const Home = () => {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hello There! <span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
-              </h1>
+              {/* <h1 style={{ paddingBottom: 15 }} className="heading">
+                Hello There! 
+                <span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
+              </h1> */}
 
               <h1 className="heading-name">
-                I'm
+                Hi I'm
                 <strong className="main-name"> SHYAAM </strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left", display:'grid', rowGap:5 }}>
+              <div style={{ padding: 50, textAlign: "left", display: 'grid', rowGap: 5 }}>
+                <p> I'm a tech enthusiast who always looks into new tech stacks. A single word to represent me is adaptability. Loves to learn new technology to work on a project.</p>
                 <div><Type /></div>
                 &nbsp;
-                <div><Button className="gradient-backgroud" onClick={handleDownload}>
-                  {enableLoader ? <BiLoaderCircle /> : <BiDownload />}&nbsp;
-                  Download CV
-                </Button>
+                <div>
+                  <ul>
+                    <li className="social-icons">
+                      <a className="home-social-icons"
+                        href="https://github.com/Shyaam-Padmanathan"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <AiFillGithub />
+                      </a>
+                    </li>
+                    <li className="social-icons">
+                      <a className="home-social-icons"
+                        href="https://www.linkedin.com/in/shyaam-p-b62277157/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaLinkedinIn />
+                      </a>
+                    </li>
+                    <li className="social-icons">
+                      <a className="home-social-icons"
+                        href="mailto:shyaampadmanathan99@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <AiFillMail />
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
