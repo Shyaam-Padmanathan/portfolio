@@ -40,11 +40,12 @@ export const MenuItems = [
         icon: <AiOutlineUser style={{ marginBottom: "3px" }} />,
         path: '/about'
     },
-    // {
-    //     name:'Projects',
-    //     icon: <AiOutlineFundProjectionScreen style={{ marginBottom: "3px" }}/>,
-    //     path:'/projects'
-    // }
+    {
+        name:'Skills',
+        section: 'skills',
+        icon: <AiOutlineFundProjectionScreen style={{ marginBottom: "3px" }}/>,
+        path:'/projects'
+    }
 ];
 
 export const TyperMessages = [

@@ -3,7 +3,6 @@ import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 
 import {
@@ -16,6 +15,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import ScrollToTop from "./components/ScrollToTop";
 import { BiChevronUpCircle } from "react-icons/bi";
+import Techstack from "./components/About/Techstack";
+import Toolstack from "./components/About/Toolstack";
+import Github from "./components/About/Github";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -37,6 +39,9 @@ function App() {
       {/* <ScrollToTop /> */}
        <Home />
        <About/>
+       <Techstack />
+       <Toolstack />
+       <Github />
       </div>
       <BiChevronUpCircle id='scrollTop' size={50} className='scroll-top-icon' onClick={()=>ScrollToTop()}/>
       <Footer />

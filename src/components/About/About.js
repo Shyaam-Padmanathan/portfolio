@@ -1,11 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-import Github from "./Github";
-import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import AboutLogo from "../../assets/about_2.svg";
-import Toolstack from "./Toolstack";
 
 function About() {
   return (
@@ -35,20 +32,6 @@ function About() {
           </Col>
 
         </Row>
-        <h1 className="project-heading">
-           <strong className="green">Languages </strong>
-           and <strong className="green">Frameworks </strong> I use
-           
-        </h1>
-
-        <Techstack />
-
-        <h1 className="project-heading">
-          <strong className="green">Tools</strong> I use
-        </h1>
-        <Toolstack />
-
-        <Github />
       </Container>
       <Particle />
     </Container>

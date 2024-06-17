@@ -580,7 +580,7 @@ button:focus {
 
 .about-section {
   position: relative !important;
-  padding-top: 150px !important;
+  padding-top: 70px !important;
   padding-bottom: 30px !important;
   color: var(--text-color) !important;
 }

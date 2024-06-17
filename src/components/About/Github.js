@@ -1,7 +1,8 @@
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
-import { Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { useThemeContext } from "../../hooks/themeHook";
+import Particle from "../Particle";
 
 function Github() {
   const { dark } = useThemeContext();
@@ -31,10 +32,14 @@ function Github() {
   };
 
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "40px" }}>
-      <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
+    <section id="github">
+    <Container fluid className="about-section">
+    <Container>
+    <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
         <strong className="green">Github</strong> Activity
       </h1>
+    <Row style={{ justifyContent: "center", paddingBottom: "40px" }}>
+      
 
       <GitHubCalendar
         username="Shyaam-Padmanathan"
@@ -44,6 +49,10 @@ function Github() {
         fontSize={16}
       />
     </Row>
+    </Container>
+    <Particle/>
+    </Container>
+    </section>
   );
 }
 
