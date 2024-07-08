@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
+  //const [activeLink, setActiveLink] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
   const scrollToSection =(sectionId)=>{
