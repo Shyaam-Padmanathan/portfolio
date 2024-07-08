@@ -49,9 +49,9 @@ export const MenuItems = [
 ];
 
 export const TyperMessages = [
-    "Full Stack Developer",
-    "Software Engineer",
-    "Passionate about Engineering"
+    ">_Full_Stack_Developer",
+    ">_Software_Engineer",
+    ">_Passionate_About_Engineering"
 ];
 
 export const CompanyDetail = {
