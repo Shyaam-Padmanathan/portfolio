@@ -18,10 +18,6 @@ function Footer() {
       <Row>
         <Col md="4"/>
 
-        <Col md="4" className="footer-copyright">
-          <h3>Copyright © {year} Shyaam</h3>
-        </Col>
-
         <Col md="4" className="footer-body">
           <ul>
             <li className="social-icons">
